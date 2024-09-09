@@ -1,0 +1,30 @@
+# Installation of Docker container
+
+# The JetPack comes with the docker, check the docker version using the command
+docker --version
+
+# If it shows the version just enable the docker using enable commands
+
+# If docker is not installed, install using following commands
+sudo apt update
+sudo apt install docker.io
+
+# Enable the docker
+sudo systemctl start docker
+sudo systemctl enable docker
+
+# Download the Docker container from this link
+https://github.com/dusty-nv/jetson-inference
+
+# Download the container files
+https://github.com/dusty-nv/jetson-containers/tree/bc8d0264ef25aa0d1d25a54e4658f491d2fa130
+
+# Extract both zip files 
+# Copy the jetson-container files to containers folder in the /jetson-inference/docker/
+
+# To run the docker container
+# Replace "/home/mllab/ldnet" with your project folder path, this folder mounts with the docker container
+docker/run.sh --volume /home/mllab/ldnet:/jetson-inference
+
+# Now you can run your project scripts inside the container 
+
